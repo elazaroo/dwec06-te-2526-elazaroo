@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --configuration production --base-href /dwec06-te-2526-elazaroo/ && npx angular-cli-ghpages --dir=dist/biblioteca/browser"
   },
   "prettier": {
     "printWidth": 100,
@@ -37,6 +38,7 @@
     "@angular/build": "^21.0.3",
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
+    "angular-cli-ghpages": "^3.0.1",
     "typescript": "~5.9.2"
   }
 }
