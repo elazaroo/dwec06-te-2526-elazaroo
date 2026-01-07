@@ -1,0 +1,22 @@
+<div class="history-container">
+    <div class="history-header">
+        <h2>📋 Historial de Acciones</h2>
+        <button *ngIf="history.length > 0" (click)="clearHistory()" class="btn btn-clear">
+            Limpiar Historial
+        </button>
+    </div>
+
+    <div *ngIf="history.length === 0" class="empty">
+        No hay acciones en el historial
+    </div>
+
+    <ul *ngIf="history.length > 0" class="history-list">
+        <li *ngFor="let entry of history" class="history-item">
+            <span class="action" [ngClass]="getActionClass(entry.action)">
+                {{ entry.action }}
+            </span>
+            <span class="book-title">{{ entry.bookTitle }}</span>
+            <span class="date">{{ entry.date | date:'dd/MM/yyyy HH:mm' }}</span>
+        </li>
+    </ul>
+</div>

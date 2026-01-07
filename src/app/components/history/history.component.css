@@ -1,0 +1,89 @@
+.history-container {
+    padding: 2rem;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.history-header h2 {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.btn-clear {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-clear:hover {
+    background-color: #c0392b;
+}
+
+.empty {
+    text-align: center;
+    padding: 3rem;
+    color: #7f8c8d;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.action {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    min-width: 90px;
+    text-align: center;
+}
+
+.action-create {
+    background-color: #27ae60;
+    color: white;
+}
+
+.action-update {
+    background-color: #f39c12;
+    color: white;
+}
+
+.action-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.book-title {
+    flex: 1;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.date {
+    color: #7f8c8d;
+    font-size: 0.875rem;
+}

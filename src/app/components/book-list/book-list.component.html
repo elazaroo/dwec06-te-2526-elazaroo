@@ -1,0 +1,45 @@
+<div class="book-list-container">
+    <h2>📚 Lista de Libros</h2>
+
+    <div class="search-box">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filterBooks()"
+            placeholder="Buscar por título, autor o género...">
+    </div>
+
+    <div *ngIf="loading" class="loading">
+        Cargando libros...
+    </div>
+
+    <div *ngIf="error" class="error">
+        {{ error }}
+    </div>
+
+    <div *ngIf="!loading && filteredBooks.length === 0" class="empty">
+        No se encontraron libros
+    </div>
+
+    <table *ngIf="!loading && filteredBooks.length > 0" class="books-table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Año</th>
+                <th>Género</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of filteredBooks">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.year }}</td>
+                <td>{{ book.genre }}</td>
+                <td class="actions">
+                    <a [routerLink]="['/books', book.id]" class="btn btn-view">Ver</a>
+                    <a [routerLink]="['/books/edit', book.id]" class="btn btn-edit">Editar</a>
+                    <button (click)="deleteBook(book)" class="btn btn-delete">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
